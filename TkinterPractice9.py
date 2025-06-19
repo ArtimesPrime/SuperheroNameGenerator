@@ -5,6 +5,8 @@ class name:
     def __init__(self):
         self.root = Tk()
         self.root.title("Superhero Name")
+        self.root.configure(highlightthickness=2, highlightcolor="black", bd=0)
+
         self.qualities=["Happy", "Awesome", "Outgoing", "Funky"]
         self.animals=["Shark", "Dog", "Cat", "mouse"]
         self.root.configure(bg="white")
@@ -12,7 +14,7 @@ class name:
         self.a = StringVar()
 
         self.style = ttk.Style()
-        self.style.configure("TRadiobutton", background="White", fg_color="Purple")
+        self.style.configure("TRadiobutton", background="White", )
 
 
         self.root.rowconfigure(list(range(10)), weight=1)
@@ -34,13 +36,13 @@ class name:
         
 
         self.colours = Label(self.root, font = "Verdana 12 bold", text="Enter a Colour",bg="white"  )
-        self.colours.grid(column=0, sticky=NSEW)
+        self.colours.grid(column=0, sticky=NSEW, pady=5)
 
-        self.colour = Entry(self.root, justify=CENTER,bg="white")
-        self.colour.grid(column=0)
+        self.colour = Entry(self.root, justify=CENTER,bg="white", width= 23)
+        self.colour.grid(column=0, pady=5)
 
         self.animal_label = Label(self.root, font = "Verdana 12 bold", text="Select an animal",bg="white"  )
-        self.animal_label.grid(column=0, sticky=NSEW)
+        self.animal_label.grid(column=0, sticky=NSEW, pady=5)
 
         self.animal = StringVar()
         self.animal.set("")
@@ -50,7 +52,7 @@ class name:
 
 
         self.make = Button(self.root,font = "Verdana 12 bold", text="Create Name", command=self.name_maker,bg="white")
-        self.make.grid(column=0)
+        self.make.grid(column=0, pady=10)
 
         self.outcome = Label(self.root, font = "Verdana 12 bold", textvariable=self.a,bg="white")
         self.outcome.grid(column=0)
